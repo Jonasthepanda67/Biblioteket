@@ -1,3 +1,5 @@
+using Biblioteket;
+
 namespace UnitTest_Biblioteket
 {
     public class UnitTest1

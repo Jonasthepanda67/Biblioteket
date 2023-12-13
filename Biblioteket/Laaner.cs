@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Biblioteket
 {
-    public class Laaner
+    public class Laaner : Person
     {
         public readonly int LaanerNummer;
-        public readonly string Navn;
-        public Laaner(int l, string n) { 
+        public Laaner(int l, string n, string e) { 
         LaanerNummer = l;
         Navn = n;
+        Email = e;
         }
     }
 }

@@ -7,7 +7,7 @@
         public static void Main()
         {
             bool menuloop = true;
-            string lnavn; int lnummer = 1; string opretnylaaner = "nej";
+            string lnavn, lemail; int lnummer = 1; string opretnylaaner = "nej";
             Bibliotek Sønderborgbibliotek = new Bibliotek("Sønderborg bibliotek");
             do
             {
@@ -31,9 +31,11 @@
                             Console.Clear();
                             Console.Write("\nindtast navn på låner du vil oprette her: ");
                             lnavn = Console.ReadLine();
+                            Console.Write("\nindtast lånerens email her: ");
+                            lemail = Console.ReadLine();
                             Console.Clear();
-                            Sønderborgbibliotek.Opretlaaner(lnummer, lnavn);
-                            string p2 = Sønderborgbibliotek.HentLaaner(lnummer, lnavn);
+                            Sønderborgbibliotek.Opretlaaner(lnummer, lnavn, lemail);
+                            string p2 = Sønderborgbibliotek.HentLaaner(lnummer, lnavn, lemail);
                             Console.WriteLine(p2);
                             lnummer++;
                             Console.Write("\nVil du oprette endnu en laaner? ja/nej: ");
@@ -62,6 +64,5 @@
                 }
             } while (menuloop == true);
         }
-        
     }
 }

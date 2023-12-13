@@ -16,7 +16,7 @@ namespace Biblioteket
             laanere = new List<Laaner>();
         }
         public string HentBibliotek() {
-            return "Velkommen til " + BiblioteksNavn + " - datoen idag er: " + DateTime.Now;
+            return "Velkommen til " + BiblioteksNavn + " - datoen idag er: " + DateTime.Now.ToShortDateString();
         }
         public string Opretlaaner(int lNummer, string navn) {
             Laaner nyLaaner = new Laaner(lNummer, navn);

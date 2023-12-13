@@ -8,11 +8,11 @@ namespace Biblioteket
 {
     public class Laaner
     {
-        public int laanerNummer { get; init; }
-        public string navn { get; init; }
+        public readonly int LaanerNummer;
+        public readonly string Navn;
         public Laaner(int l, string n) { 
-        laanerNummer = l;
-        navn = n;
+        LaanerNummer = l;
+        Navn = n;
         }
     }
 }

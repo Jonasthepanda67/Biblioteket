@@ -13,6 +13,7 @@ namespace Biblioteket
         List<Laaner> laanere;
         public Bibliotek(string n) {
             BiblioteksNavn = n;
+            laanere = new List<Laaner>();
         }
         public string HentBibliotek() {
             return "Velkommen til " + BiblioteksNavn + " - datoen idag er: " + DateTime.Now;
@@ -22,11 +23,16 @@ namespace Biblioteket
             laanere.Add(nyLaaner);
             return "Låner med nummeret: " + lNummer + " og navnet: " + navn + " er nu blevet oprettet";
         }
-        public string HentLaaner(Laaner laaner1) {
-            return "Lånernummer: " + laaner1.laanerNummer + " - Navn: " + laaner1.navn + " er låner hos: " + BiblioteksNavn;
+        public string HentLaaner(int lnummer, string lnavn) {
+            return "Lånernummer: " + lnummer + " - Navn: " + lnavn + " er låner hos: " + BiblioteksNavn;
         }
-        public void HentAlleLaanere(){
-
+        public StringBuilder HentAlleLaanere(){
+            StringBuilder sb = new StringBuilder();
+            foreach (Laaner laaner in laanere)
+            {
+                sb.AppendLine("Lånernummer: " + laaner.LaanerNummer + " Navn på låneren: " + laaner.Navn + Environment.NewLine);
+            }
+            return sb;
         }
     }
 }

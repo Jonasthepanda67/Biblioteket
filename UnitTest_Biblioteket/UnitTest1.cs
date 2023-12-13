@@ -10,7 +10,7 @@ namespace UnitTest_Biblioteket
         {
             Mainp.Main();
             string expected = "Jonas";
-            string actual = laaner1.navn;
+            string actual = laaner1.Navn;
             Assert.Equal(expected, actual);
         }
     }

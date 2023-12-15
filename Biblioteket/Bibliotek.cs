@@ -18,8 +18,10 @@ namespace Biblioteket
 {
     public class Bibliotek
     {
-        string filepath = "C:\\Users\\U427797\\source\\repos\\Biblioteket\\Biblioteket\\boeger.csv";
-        string filepath2 = "C:\\Users\\U427797\\source\\repos\\Biblioteket\\Biblioteket\\laanere.csv";
+        string filepath = "..\\boeger.csv";
+        string message = "titel,forfatter,isbnnummer,udlaant";
+        string filepath2 = "..\\laanere.csv";
+        string message2 = "Laanernummer,Navn,Email";
         StringBuilder sbf = new StringBuilder();
         string BiblioteksNavn;
         List<Laaner> laanere;
@@ -30,6 +32,16 @@ namespace Biblioteket
         /// Bruges til at initialisere diverse ting bl.a. strings, lister og string arrays.
         /// </summary>
         public Bibliotek(string n) {
+            if (!File.Exists(filepath))
+            {
+                File.Create(filepath);
+                File.WriteAllText(filepath, message + Environment.NewLine);
+            }
+            if (!File.Exists(filepath2))
+            {
+                File.Create(filepath2);
+                File.WriteAllText(filepath2, message2 + Environment.NewLine);
+            }
             BiblioteksNavn = n;
             laanere = new List<Laaner>();
             udlaantBoeger = new List<UdlaanBoeger>();
